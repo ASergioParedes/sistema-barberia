@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barberia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9c98858db1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <div class="principal">
+        <header>
+            <div>
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Agenda</a>
+                <a href="#">Iniciar Sesión</a>
+                <a href="#" class="highlight">Reservar</a>
+            </nav>
+        </header>
+        <div class="hero">
+            <h1>Bienvenido a la barbería el barbero</h1>
+            <p>"Tu estilo nuestro compromiso"</p>
+            <a href="#">Reservar Turno</a>
+            <div class="scroll-down">
+                <i class="fas fa-cut scissors-icon"></i>
+                <!-- Ícono de tijera -->
+            </div>
+        </div>
+    </div>
+    <div class="servicios" id="nuestros-servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="tarjetas-contenedor">
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fas fa-scissors"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Corte de Cabello</h3>
+                <p class="precio">Desde $20.00</p>
+                <p class="duracion">30 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fa-solid fa-hand-holding-droplet"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Secado y Peinado</h3>
+                <p class="precio">Desde $25.00</p>
+                <p class="duracion">40 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fas fa-scissors"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Corte de Cabello</h3>
+                <p class="precio">Desde $20.00</p>
+                <p class="duracion">30 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fa-solid fa-hand-holding-droplet"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Secado y Peinado</h3>
+                <p class="precio">Desde $25.00</p>
+                <p class="duracion">40 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fas fa-scissors"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Corte de Cabello</h3>
+                <p class="precio">Desde $20.00</p>
+                <p class="duracion">30 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+            <div class="tarjeta">
+                <div class="icono">
+                    <i class="fa-solid fa-hand-holding-droplet"></i>
+                    <!-- Aquí se usa el icono de tijeras -->
+                </div>
+                <h3 class="titulo-servicio">Secado y Peinado</h3>
+                <p class="precio">Desde $25.00</p>
+                <p class="duracion">40 min</p>
+                <button class="boton-reservar">Reservar Ahora</button>
+            </div>
+        </div>
+    </div>
+    <div class="agenda">
+        <h2>Agenda tu Cita</h2>
+        <form action="#" method="#" class="formulario-cita">
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required class="input-text">
+            </div>
+            <div class="campo">
+                <label for="servicio">Servicio Deseado:</label>
+                <select name="servicio" id="servicio" class="dropdown">
+                    <option value="" disabled selected>Seleciona un servicio</option>
+                    <option value="corte">Corte de Cabello</option>
+                    <option value="afeitado">Afeitado</option>
+                    <option value="tinte">Tinte</option>
+            </select>
+            </div>
+            <div class="campo">
+                <label for="barbero">Elige tu Barbero</label>
+                <select id="barbero" class="dropdown" required>
+                <option value="" disabled selected>Selecciona un barbero</option>
+                <option value="juan">Juan</option>
+                <option value="carlos">Carlos</option>
+                <option value="pedro">Pedro</option>
+            </select>
+            </div>
+            <div class="campo">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required class="input-text">
+            </div>
+            <div class="campo">
+                <label for="hora">Hora:</label>
+                <select name="hora" id="hora" class="dropdown">
+                    <option value="" disabled selected>Selecciona una hora</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="contacto">Correo Electronico o Teléfono:</label>
+                <input type="text" name="contacto" id="contacto" placeholder="Correo o Tel." required class="input-text">
+            </div>
+            <div class="campo">
+                <button type="submit" class="btn-confirmar" id="btn-confirmar"> Confirmar Cita</button>
+            </div>
+        </form>
+    </div>
+    <div id="contacto" class="seccion-contacto">
+        <h2>Contáctanos</h2>
+        <div class="contacto-contenedor">
+            <div class="columna-izquierda">
+                <div class="informacion-contacto">
+                    <p><i class="fas fa-phone-alt"></i> Teléfono: <span>(123) 456-7890</span></p>
+                    <p><i class="fas fa-envelope"></i> Correo electrónico: <span>info@empresa.com</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: <span>Calle Ficticia 123, Ciudad</span></p>
+                </div>
+            </div>
+            <div class="columna-derecha">
+                <div id="mapa"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nuestros-barberos">
+        <h2 class="titulo-seccion">Nuestros Barberos</h2>
+        <div class="barberos-contenedor">
+            <!-- Tarjeta de barbero 1 -->
+            <div class="tarjeta-barbero">
+                <img src="img/barbero1.png" alt="Barbero 1" class="foto-barbero">
+                <h3 class="nombre-barbero">Juan Pérez</h3>
+                <p class="descripcion-barbero">Barbero con 5 años de experiencia en cortes modernos y clásicos.</p>
+            </div>
+
+            <!-- Tarjeta de barbero 2 -->
+            <div class="tarjeta-barbero">
+                <img src="img/barbero2.png" alt="Barbero 2" class="foto-barbero">
+                <h3 class="nombre-barbero">Pablo Gómez</h3>
+                <p class="descripcion-barbero">Especialista en cortes de cabello para hombres y afeitados tradicionales.</p>
+            </div>
+
+            <!-- Tarjeta de barbero 3 -->
+            <div class="tarjeta-barbero">
+                <img src="img/barbero3.png" alt="Barbero 3" class="foto-barbero">
+                <h3 class="nombre-barbero">Carlos Díaz</h3>
+                <p class="descripcion-barbero">Con más de 10 años de experiencia, experto en técnicas de barbería internacional.</p>
+            </div>
+        </div>
+    </div>
+    <div class="newsletter">
+        <div class="newsletter-contenedor">
+            <h2 class="titulo-seccion">Suscríbete a Nuestro Newsletter</h2>
+            <p class="descripcion-newsletter">
+                ¡Recibe ofertas exclusivas y anuncios especiales directamente en tu correo!
+            </p>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="email-newsletter" placeholder="Tu correo electrónico" required class="campo-newsletter">
+                <button type="submit" class="boton-newsletter">Suscribirse</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <!-- Logotipo -->
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logotipo" width="50" height="50">
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <ul class="footer-enlaces">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Redes sociales -->
+            <div class="footer-redes">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
