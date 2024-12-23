@@ -1040,17 +1040,6 @@ header nav a:nth-child(5):hover {
 
 /* Contenedor principal que incluye el header y el contenido */
 
-.dashboard-container {
-    display: flex;
-    flex-direction: column;
-    /* Estructura vertical */
-    width: 100%;
-    height: 100vh;
-    /* Ocupa toda la altura de la ventana */
-    margin: 0;
-    padding: 0;
-}
-
 
 /* Barra superior */
 
@@ -1058,6 +1047,9 @@ header nav a:nth-child(5):hover {
     height: 60px;
     /* Altura fija del header */
     background-color: #333333;
+    position: fixed;
+    width: 100%;
+    top: 0;
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -1065,6 +1057,10 @@ header nav a:nth-child(5):hover {
     padding: 0 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.content {
+    margin-top: 60px;
 }
 
 
@@ -1214,94 +1210,161 @@ header nav a:nth-child(5):hover {
 
 /* Contenedor de las tarjetas */
 
-
-/* Contenedor de la sección de Resumen General */
-
 .resumen-general {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* Cuatro columnas */
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(3, 300px);
     gap: 20px;
-    /* Espacio entre las tarjetas */
     padding: 20px;
-    width: 100%;
-    height: calc(100vh - 60px);
-    /* Restar el espacio del header */
-    overflow-y: auto;
-    /* Permitir desplazamiento si el contenido es demasiado grande */
-}
-
-
-/* Estilo para las tarjetas */
-
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-
-/* Títulos de las tarjetas */
-
-.card-titulo {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-
-/* Iconos dentro de los títulos */
-
-.card-titulo i {
-    margin-right: 10px;
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-
-/* Contenido de las tarjetas */
-
-.card-contenido {
-    flex: 1;
-    display: flex;
-    align-items: center;
+    background-color: #F7F7F7;
     justify-content: center;
 }
 
-
-/* Ajustar el tamaño del gráfico */
-
-.chart {
+.resumen-general .card {
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 100%;
-    height: 200px;
-    /* Ajusta la altura de los gráficos */
+    height: 100%;
+}
+
+.resumen-general .card-titulo {
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+}
+
+.resumen-general .card-titulo i {
+    color: var(--primary-color);
+}
+
+.resumen-general .card:nth-child(1) {
+    grid-column: 1 / 2;
+    height: 100%;
+    width: 100%;
+}
+
+.ingresos-generados .card-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.resumen-general .card:nth-child(2) {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    height: 100%;
+    width: 100%;
+}
+
+.servicios-solicitados .card-contenido {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.resumen-general .card:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: 100%;
+    width: 100%;
+}
+
+.total-citas .card-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumen-general .card:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: 100%;
+    width: 100%;
+}
+
+.opiniones-clientes .card-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumen-general .card:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    height: 100%;
+    width: 100%;
+}
+
+.clientes-frecuentes .card-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumen-general .card:nth-child(6) {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+    height: 100%;
+    width: 100%;
+}
+
+.hora-picos .card-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumen-general .card:nth-child(7) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+    height: 100%;
+    width: 100%;
+}
+
+.ingresos-diarios .card-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-/* En dispositivos móviles, se apilan las tarjetas */
+/* Media Queries para diseño responsive */
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .resumen-general {
-        grid-template-columns: 1fr 1fr;
-        /* Dos columnas */
+        display: flex;
+        flex-direction: column;
     }
-}
-
-
-/* En pantallas muy pequeñas, cada tarjeta ocupa toda la fila */
-
-@media (max-width: 480px) {
-    .resumen-general {
-        grid-template-columns: 1fr;
-        /* Una sola columna */
+    .resumen-general .card {
+        margin: 5px 0;
+        width: 100%;
+        height: 100%;
+    }
+    .resumen-general .card-titulo {
+        font-size: 18px;
+        text-align: center;
+        color: #000;
+        font-weight: 600;
+    }
+    .resumen-general .card-titulo i {
+        color: var(--primary-color);
     }
 }
