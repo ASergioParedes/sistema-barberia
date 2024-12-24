@@ -1356,7 +1356,7 @@ header nav a:nth-child(5):hover {
     .resumen-general .card {
         margin: 5px 0;
         width: 100%;
-        height: 100%;
+        height: 400px!important;
     }
     .resumen-general .card-titulo {
         font-size: 18px;
