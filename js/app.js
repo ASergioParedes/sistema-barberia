@@ -136,7 +136,62 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.getElementById("menu-hamburguesa");
     const sidebar = document.getElementById("sidebar");
 
+    cargarContenido("layout/resumen.php");
+
     menuToggle.addEventListener("click", function() {
         sidebar.classList.toggle("active");
     });
+
+    // Selecciona todos los enlaces del menú
+    const menuLinks = document.querySelectorAll("#sidebar ul li a");
+    const contentDiv = document.getElementById("contenido-cargado");
+
+    // Agrega eventos de clic a los enlaces
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            // Obtiene la URL de la sección
+            const sectionUrl = this.getAttribute("data-section");
+
+            // Realiza la solicitud AJAX
+            fetch(sectionUrl)
+                .then((response) => {
+                    if (!response.ok) throw new Error("Error al cargar la sección");
+                    return response.text();
+                })
+                .then((data) => {
+                    // Carga el contenido en el contenedor
+                    contentDiv.innerHTML = data;
+
+                    // Aquí reinicia los gráficos, si es necesario
+                    if (typeof inicializarGraficos === "function") {
+                        console.log("Inicializando gráficos...");
+                        inicializarGraficos(); // Asegúrate de que esta función exista en `graficos.js`
+                    }
+                })
+                .catch((error) => {
+                    contentDiv.innerHTML =
+                        "<p>Error al cargar el contenido. Inténtalo de nuevo más tarde.</p>";
+                });
+        });
+    });
+
+    // Carga inicial del resumen general
+    document.querySelector('[data-section="resumen.php"]').click();
 });
+
+function cargarContenido(url) {
+    const contenedor = document.getElementById("contenido-cargado");
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => {
+            contenedor.innerHTML = data;
+
+            if (typeof inicializarGraficos === "function") {
+                console.log("Inicializando gráficos...");
+                inicializarGraficos(); // Asegúrate de que esta función exista en `graficos.js`
+            }
+        })
+        .catch((error) => console.error("Error al cargar el contenido:", error));
+}
